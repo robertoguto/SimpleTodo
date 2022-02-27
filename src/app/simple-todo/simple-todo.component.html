@@ -1,0 +1,31 @@
+<div class="background-container" id="{{ theme ? 'dark' : 'light' }}">
+  <button type="button" class="theme-change-button" title="Theme Change Button" (click)="theme = !theme">
+    <span *ngIf="theme">
+      <img src="../../assets/svg/sun.svg" alt="Theme Light">
+      Light
+    </span>
+    <span *ngIf="!theme">
+      <img src="../../assets/svg/moon.svg" alt="Theme Dark">
+      Dark
+    </span>
+  </button>
+  <main class="container">
+    <header class="top-header">
+      <input type="text" class="top-header__title" value="#SimpleTodo">
+    </header>
+    <nav class="content-tabs">
+      <button #all #tab type="button" class="content-tabs__tab content-tabs__tab--active" (click)="changeTab(all, tabTypeEnum.ALL)">
+        <strong>All</strong>
+      </button>
+      <button #active #tab type="button" class="content-tabs__tab" (click)="changeTab(active, tabTypeEnum.ACTIVE)">
+        <strong>Active</strong>
+      </button>
+      <button #complete #tab type="button" class="content-tabs__tab" (click)="changeTab(complete, tabTypeEnum.COMPLETE)">
+        <strong>Complete</strong>
+      </button>
+    </nav>
+    <!-- <section class="">
+
+    </section> -->
+  </main>
+</div>
