@@ -14,18 +14,21 @@
       <input type="text" class="top-header__title" value="#SimpleTodo">
     </header>
     <nav class="content-tabs">
-      <button #all #tab type="button" class="content-tabs__tab content-tabs__tab--active" (click)="changeTab(all, tabTypeEnum.ALL)">
+      <button #all #tab type="button" title="Tab all tasks" class="content-tabs__tab content-tabs__tab--active" (click)="changeTab(all, tabTypeEnum.ALL)">
         <strong>All</strong>
       </button>
-      <button #active #tab type="button" class="content-tabs__tab" (click)="changeTab(active, tabTypeEnum.ACTIVE)">
+      <button #active #tab type="button" title="Tab all active tasks" class="content-tabs__tab" (click)="changeTab(active, tabTypeEnum.ACTIVE)">
         <strong>Active</strong>
       </button>
-      <button #complete #tab type="button" class="content-tabs__tab" (click)="changeTab(complete, tabTypeEnum.COMPLETE)">
+      <button #complete #tab type="button" title="Tab all completed tasks" class="content-tabs__tab" (click)="changeTab(complete, tabTypeEnum.COMPLETE)">
         <strong>Complete</strong>
       </button>
     </nav>
-    <!-- <section class="">
-
-    </section> -->
+    <section class="content-tasks">
+      <div class="content-tasks__input" *ngIf="tabActive === tabTypeEnum.ALL || tabActive === tabTypeEnum.ACTIVE">
+        <input type="text" placeholder="Add task" #taskInput>
+        <button type="add" title="Add task" (click)="addTask(taskInput)">Add</button>
+      </div>
+    </section>
   </main>
 </div>

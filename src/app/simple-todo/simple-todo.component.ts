@@ -27,6 +27,10 @@ export class SimpleTodoComponent implements OnInit {
     element.classList.add('content-tabs__tab--active');
     this.tabActive = tabNumber;
   }
+
+  addTask(input: HTMLInputElement): void {
+    // console.log(input.value);
+  }
 }
 
 

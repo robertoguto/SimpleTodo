@@ -47,6 +47,16 @@
         }
       }
     }
+
+    .content-tasks {
+      &__input {
+        input {
+          background-color: #303a44;
+          border: none;
+          color: #fff;
+        }
+      }
+    }
   }
 }
 
@@ -70,6 +80,18 @@
       &__tab {
         strong {
           color: #4b6a9b;
+        }
+      }
+    }
+
+    .content-tasks {
+      &__input {
+        input {
+          border-color: #d6d6d6;
+        }
+
+        button {
+
         }
       }
     }
