@@ -14,26 +14,41 @@
       <input type="text" class="top-header__title" value="#SimpleTodo">
     </header>
     <nav class="content-tabs">
-      <button #all #tab type="button" title="Tab all tasks" class="content-tabs__tab content-tabs__tab--active" (click)="changeTab(all, tabTypeEnum.ALL)">
+      <button
+        type="button"
+        title="Tab all tasks"
+        class="content-tabs__tab {{ tabActive === tabTypeEnum.ALL ? 'content-tabs__tab--active' : '' }}"
+        (click)="tabActive = tabTypeEnum.ALL"
+      >
         <strong>All</strong>
       </button>
-      <button #active #tab type="button" title="Tab all active tasks" class="content-tabs__tab" (click)="changeTab(active, tabTypeEnum.ACTIVE)">
+      <button
+        type="button"
+        title="Tab all active tasks"
+        class="content-tabs__tab {{ tabActive === tabTypeEnum.ACTIVE ? 'content-tabs__tab--active' : '' }}"
+        (click)="tabActive = tabTypeEnum.ACTIVE"
+      >
         <strong>Active</strong>
       </button>
-      <button #complete #tab type="button" title="Tab all completed tasks" class="content-tabs__tab" (click)="changeTab(complete, tabTypeEnum.COMPLETE)">
+      <button
+        type="button"
+        title="Tab all completed tasks"
+        class="content-tabs__tab {{ tabActive === tabTypeEnum.COMPLETE ? 'content-tabs__tab--active' : '' }}"
+        (click)="tabActive = tabTypeEnum.COMPLETE"
+      >
         <strong>Complete</strong>
       </button>
     </nav>
     <section class="content-input">
       <div class="content-input__input" *ngIf="tabActive === tabTypeEnum.ALL || tabActive === tabTypeEnum.ACTIVE">
-        <input type="text" placeholder="Add task" #taskInput (keyup.enter)="addTask(taskInput)">
-        <button type="add" title="Add task" (click)="addTask(taskInput)">Add</button>
+        <input type="text" placeholder="Add task" [value]="valueInputTask" [(ngModel)]="valueInputTask" (keyup.enter)="addTask()">
+        <button type="add" title="Add task" (click)="addTask()">Add</button>
       </div>
     </section>
-    <section class="content-tasks">
-      <app-tasks-list *ngIf="tabActive === tabTypeEnum.ALL" [tasks]="tasks" [tabActive]="tabActive" (changeCheck)="changeTask($event)" (deleteCheck)="deleteTask($event)"></app-tasks-list>
-      <app-tasks-list *ngIf="tabActive === tabTypeEnum.ACTIVE" [tasks]="tasks | tasksActive " [tabActive]="tabActive" (changeCheck)="changeTask($event)" (deleteCheck)="deleteTask($event)"></app-tasks-list>
-      <app-tasks-list *ngIf="tabActive === tabTypeEnum.COMPLETE" [tasks]="tasks | tasksComplete" [tabActive]="tabActive" (changeCheck)="changeTask($event)" (deleteCheck)="deleteTask($event)"></app-tasks-list>
+    <section class="content-tasks" [ngSwitch]="tabActive">
+      <app-tasks-list *ngSwitchCase="tabTypeEnum.ALL" [tasks]="tasks" [tabActive]="tabActive" (changeCheck)="changeTask($event)" (deleteCheck)="deleteTask($event)"></app-tasks-list>
+      <app-tasks-list *ngSwitchCase="tabTypeEnum.ACTIVE" [tasks]="tasks | tasksActive " [tabActive]="tabActive" (changeCheck)="changeTask($event)" (deleteCheck)="deleteTask($event)"></app-tasks-list>
+      <app-tasks-list *ngSwitchCase="tabTypeEnum.COMPLETE" [tasks]="tasks | tasksComplete" [tabActive]="tabActive" (changeCheck)="changeTask($event)" (deleteCheck)="deleteTask($event)"></app-tasks-list>
     </section>
   </main>
 </div>
