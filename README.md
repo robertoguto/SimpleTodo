@@ -37,6 +37,7 @@
 	📚 Learned concepts
 </h2>
 
+- Pipes for filtering tasks
 - LocalStorage to save tasks and theme
 - UUID to create dynamic ids for tasks
 
