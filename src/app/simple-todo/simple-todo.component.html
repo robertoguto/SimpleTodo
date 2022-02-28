@@ -1,10 +1,10 @@
-<div class="background-container pb-5" id="{{ theme ? 'dark' : 'light' }}">
-  <button type="button" class="theme-change-button" title="Theme Change Button" (click)="theme = !theme">
-    <span *ngIf="theme">
+<div class="background-container pb-5" id="{{ config.isThemeDark ? 'dark' : 'light' }}">
+  <button type="button" class="theme-change-button" title="Theme Change Button" (click)="changeTheme()">
+    <span *ngIf="config.isThemeDark">
       <img src="../../assets/svg/sun.svg" alt="Theme Light">
       Light
     </span>
-    <span *ngIf="!theme">
+    <span *ngIf="!config.isThemeDark">
       <img src="../../assets/svg/moon.svg" alt="Theme Dark">
       Dark
     </span>
@@ -26,7 +26,7 @@
     </nav>
     <section class="content-input">
       <div class="content-input__input" *ngIf="tabActive === tabTypeEnum.ALL || tabActive === tabTypeEnum.ACTIVE">
-        <input type="text" placeholder="Add task" #taskInput>
+        <input type="text" placeholder="Add task" #taskInput (keyup.enter)="addTask(taskInput)">
         <button type="add" title="Add task" (click)="addTask(taskInput)">Add</button>
       </div>
     </section>
