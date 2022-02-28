@@ -60,7 +60,7 @@
     }
   }
 
-  .content-tasks {
+  .content-input {
     margin: 40px auto 0 auto;
     max-width: 80%;
 
@@ -97,6 +97,15 @@
           background-color: #9281f0;
         }
       }
+    }
+  }
+
+  .content-tasks {
+    margin: 40px auto 0 auto;
+    max-width: 80%;
+
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
     }
   }
 }

@@ -1,4 +1,4 @@
-<div class="background-container" id="{{ theme ? 'dark' : 'light' }}">
+<div class="background-container pb-5" id="{{ theme ? 'dark' : 'light' }}">
   <button type="button" class="theme-change-button" title="Theme Change Button" (click)="theme = !theme">
     <span *ngIf="theme">
       <img src="../../assets/svg/sun.svg" alt="Theme Light">
@@ -24,11 +24,16 @@
         <strong>Complete</strong>
       </button>
     </nav>
-    <section class="content-tasks">
-      <div class="content-tasks__input" *ngIf="tabActive === tabTypeEnum.ALL || tabActive === tabTypeEnum.ACTIVE">
+    <section class="content-input">
+      <div class="content-input__input" *ngIf="tabActive === tabTypeEnum.ALL || tabActive === tabTypeEnum.ACTIVE">
         <input type="text" placeholder="Add task" #taskInput>
         <button type="add" title="Add task" (click)="addTask(taskInput)">Add</button>
       </div>
+    </section>
+    <section class="content-tasks">
+      <app-tasks-list *ngIf="tabActive === tabTypeEnum.ALL" [tasks]="tasks" [tabActive]="tabActive" (changeCheck)="changeTask($event)" (deleteCheck)="deleteTask($event)"></app-tasks-list>
+      <app-tasks-list *ngIf="tabActive === tabTypeEnum.ACTIVE" [tasks]="tasks | tasksActive " [tabActive]="tabActive" (changeCheck)="changeTask($event)" (deleteCheck)="deleteTask($event)"></app-tasks-list>
+      <app-tasks-list *ngIf="tabActive === tabTypeEnum.COMPLETE" [tasks]="tasks | tasksComplete" [tabActive]="tabActive" (changeCheck)="changeTask($event)" (deleteCheck)="deleteTask($event)"></app-tasks-list>
     </section>
   </main>
 </div>

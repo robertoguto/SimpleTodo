@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { TabType } from './simple-todo';
+import { Tasks } from '../models/tasks';
+import { TabType } from '../models/simple-todo';
 
 @Component({
   selector: 'app-simple-todo',
@@ -9,8 +10,25 @@ export class SimpleTodoComponent implements OnInit {
   @ViewChildren('tab') tabs?: QueryList<ElementRef<HTMLButtonElement>>;
 
   public tabTypeEnum = TabType;
-  theme: boolean = false;
+  theme: boolean = true;
   tabActive: number = this.tabTypeEnum.ALL;
+  tasks: Tasks[] = [
+    {
+      id: 1,
+      title: 'Teste',
+      isComplete: false,
+    },
+    {
+      id: 2,
+      title: 'Teste2',
+      isComplete: true,
+    },
+    {
+      id: 3,
+      title: 'Teste3',
+      isComplete: false,
+    }
+  ];
 
   constructor(
   ) { }
@@ -29,7 +47,27 @@ export class SimpleTodoComponent implements OnInit {
   }
 
   addTask(input: HTMLInputElement): void {
-    // console.log(input.value);
+    if (input.value.trim() !== '') {
+      const newId = this.tasks.length <= 0 ? 1 : this.tasks[this.tasks.length - 1].id;
+
+      const newTask = {
+        id: newId,
+        title: input.value.trim(),
+        isComplete: false,
+      }
+
+      this.tasks.push(newTask);
+    }
+  }
+
+  changeTask(task: Tasks): void {
+    const indexTask = this.tasks.indexOf(task);
+    this.tasks[indexTask].isComplete = !this.tasks[indexTask].isComplete;
+    console.log(this.tasks[this.tasks.length - 1].id++);
+  }
+
+  deleteTask(task: Tasks): void {
+    this.tasks = this.tasks.filter(talk => talk.id !== task.id);
   }
 }
 

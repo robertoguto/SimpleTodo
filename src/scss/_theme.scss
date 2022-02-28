@@ -48,13 +48,19 @@
       }
     }
 
-    .content-tasks {
+    .content-input {
       &__input {
         input {
           background-color: #303a44;
           border: none;
           color: #fff;
         }
+      }
+    }
+
+    .list-tasks {
+      &__task {
+        color: #fff;
       }
     }
   }
@@ -84,14 +90,24 @@
       }
     }
 
-    .content-tasks {
+    .content-input {
       &__input {
         input {
           border-color: #d6d6d6;
         }
+      }
+    }
 
-        button {
+    .list-tasks {
+      &__task {
+        color: #4b6a9b;
 
+        label {
+          border: 2px solid #d6d6d6;
+        }
+
+        input:checked + label {
+          border: none;
         }
       }
     }
