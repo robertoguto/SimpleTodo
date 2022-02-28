@@ -102,12 +102,16 @@
       &__task {
         color: #4b6a9b;
 
-        label {
-          border: 2px solid #d6d6d6;
-        }
+        .content {
+          .check {
+            label {
+              border: 2px solid #d6d6d6;
+            }
 
-        input:checked + label {
-          border: none;
+            input:checked + label {
+              border: none;
+            }
+          }
         }
       }
     }

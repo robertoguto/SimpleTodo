@@ -1,11 +1,13 @@
 <ul class="list-tasks">
   <li class="list-tasks__task" *ngFor="let task of tasks">
-    <div>
-      <input [id]="task.id" [checked]="task.isComplete === true" type="checkbox" hidden (change)="changeTask(task)">
-      <label [for]="task.id"></label>
+    <div class="content">
+      <div class="check">
+        <input [id]="task.id" [checked]="task.isComplete === true" type="checkbox" hidden (change)="changeTask(task)">
+        <label [for]="task.id"></label>
+      </div>
       <span>{{ task.title }}</span>
     </div>
-    <button *ngIf="tabActive === 2" type="button" title="Delete task">
+    <button class="button-delete" *ngIf="tabActive === 2" type="button" title="Delete task">
       <img src="../../../assets/svg/trash-2.svg" alt="Trash" (click)="deleteTask(task)">
     </button>
   </li>
