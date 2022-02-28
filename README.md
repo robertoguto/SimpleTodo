@@ -1,27 +1,60 @@
-# SimpleTodo
+<h1 align="center">SimpleTodo</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.18.
+<h3 align="center">🚀 <a href="https://devchallenges.io">DevChallenges</a> - Todo app</h3>
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<div style="margin-top: 30px; display: flex; gap: 10px; justify-content: center;">
 
-## Code scaffolding
+  ![Badge](https://img.shields.io/badge/npm-6.14.8-%237159c1?style=for-the-badge)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  ![Badge](https://img.shields.io/badge/angular_Cli-11.2.18-%237159c1?style=for-the-badge)
 
-## Build
+  ![Badge](https://img.shields.io/badge/node-12.20.0-%237159c6?style=for-the-badge)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+</div>
 
-## Running unit tests
+<h2 style="margin-top: 30px;"> 
+	📷 Screenshots  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  <h2 style="margin-top: 20px;">Dark</h2>
 
-## Running end-to-end tests
+  <img style="margin-top: 10px;"  alt="Screenshot Dark" title="Screenshot Dark" src="src/assets/img/SimpleTodoDark.png" />
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+  <h2 style="margin-top: 20px;">Light</h2>
 
-## Further help
+  <img style="margin-top: 10px;"  alt="Screenshot Light" title="Screenshot Light" src="src/assets/img/SimpleTodoLight.png" />
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  <h2 style="margin-top: 20px;">Checking</h2>
+
+  <img style="margin-top: 10px;"  alt="Screenshot Light" title="Screenshot Light" src="src/assets/img/SimpleTodoCheck.png" />
+
+  <h2 style="margin-top: 20px;">Delete</h2>
+
+  <img style="margin-top: 10px;"  alt="Screenshot Light" title="Screenshot Light" src="src/assets/img/SimpleTodoDelete.png" />
+</h2>
+
+<h2 style="margin-top: 30px;"> 
+	📚 Learned concepts
+</h2>
+
+- LocalStorage to save tasks and theme
+- UUID to create dynamic ids for tasks
+
+<h2 style="margin-top: 30px;"> 
+	🔗 Link
+</h2>
+
+- <h3 style="margin-top: 20px;"> Demo - <a href="https://simple-todo-robertoguto.vercel.app">SimpleTodo</a></h3>
+
+<h2 style="margin-top: 30px;"> 
+	🚀 How to run
+</h2>
+
+- Clone the repository
+- Install dependencies with <code>yarn</code>
+- Start the project with <code>yarn start or ng serve -o</code>
+- It can be accessed at <code>localhost:4200</code>
+
+<hr style="margin-top: 30px; display: block;" />
+
+<span style="margin-top: 20px; display: block;">Made with ❤️ by robertoguto</span>

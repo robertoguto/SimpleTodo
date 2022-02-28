@@ -37,14 +37,14 @@
             background-image: url('../assets/svg/check.svg');
           }
         }
-
-        input:checked + label + span {
-          text-decoration: line-through;
-        }
       }
 
       span {
         word-break: break-all;
+      }
+
+      span.span-through {
+        text-decoration: line-through;
       }
     }
 
